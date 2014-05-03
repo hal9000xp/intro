@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Intro : Web pages for E(u)clid" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Intro</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hal9000xp/intro">View on GitHub</a>
+
+          <h1 id="project_title">Intro</h1>
+          <h2 id="project_tagline">Web pages for E(u)clid</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hal9000xp/intro/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hal9000xp/intro/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>E(u)clid</p>
+
+<p>Version: Apr 2014
+ Author:  Eldar Gaynetdinov
+ License: ISC</p>
+
+<p>DESCRIPTION:</p>
+
+<hr><p>E(u)clid (further in text called Euclid) is the minimalist style framework 
+ which provides the following features:</p>
+
+<ul>
+<li>event-driven engine based on epoll (SSL connections also supported)</li>
+<li>client and limited server behaviour</li>
+<li>buffering network IO</li>
+<li>global and connection based timers</li>
+<li>modularity</li>
+<li>logging</li>
+<li>limited support of HTTP 1.1 (permanent connections also supported)</li>
+<li>fixed point arithmetic</li>
+<li>YAML based config parser</li>
+<li>
+<p>linked lists, hash tables etc</p>
+
+<h2>
+<a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>PHILOSOPHY:</h2>
+
+<p>Keep it thin. Don't use a lot of libraries except glibc.
+At the moment there are only three exeptions (OpenSSL, zlib, crc32).
+Provide enough functionality and scalability but stay in the minimalist style.</p>
+
+<h2>
+<a name="why-it-exist" class="anchor" href="#why-it-exist"><span class="octicon octicon-link"></span></a>WHY IT EXIST?</h2>
+
+<p>This is the public part of my personal project which I will use 
+for algorithmic trading at NYSE, NASDAQ, CME etc.
+I don't like huge libraries and frameworks.
+That's why I decided to write this lightweight framework.
+I share it because somebody may find this framework interesting and useful.
+The name Euclid is inspired by Darren Aronofsky's film Pi.
+After I wrote event-driven engine I noticed similarity between 
+(Eu)clid and (Ev)ent. That's why I call it E(u)clid.</p>
+
+<h2>
+<a name="build" class="anchor" href="#build"><span class="octicon octicon-link"></span></a>BUILD:</h2>
+
+<p>You need a Linux environment with installed OpenSSL and zlib dev packages.</p>
+
+<p>1) To build debug version:</p>
+
+<p>$ make</p>
+
+<p>2) To build release version:</p>
+
+<p>$ make release</p>
+
+<p>3) To build debug version which is intended for proxy module:</p>
+
+<p>$ make test_many_conns</p>
+
+<p>NOTE: http proxy module is intended for testing this framework.
+But I still didn't implement support for many connections.
+That means it's needed O(n) to traverse all the connections.
+That's why in normal mode, I don't support many connections.</p>
+
+<p>4) To cleanup:</p>
+
+<p>$ make clean</p>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>GETTING STARTED</h2>
+
+<p>1) $ make test_many_conns</p>
+
+<p>2) point out your browser to: localhost:1111</p>
+
+<p>NOTE: http proxy supports SSL connections and HTTP method CONNECT.
+So it's possible to use this proxy for another protocols 
+(try to use Pidgin IM through this proxy).</p>
+
+<p>3) $ ./euclid module:proxy no_debug_log</p>
+
+<p>4) Enjoy!</p>
+
+<p>To move logging to file. Invoke this before running ./euclid</p>
+
+<p>$ ./core/make_tmpfs_logging_dir.sh</p>
+
+<p>It creates a temporary directory in tmpfs. It's useful with debug logging.</p>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Intro maintained by <a href="https://github.com/hal9000xp">hal9000xp</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
